@@ -127,5 +127,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Automatic transition for sports massage benefits
-    setInterval(nextBenefit, 5000); // Change benefit every 5 seconds
+    setInterval(nextBenefit, 10000); // Change benefit every 5 seconds
 });
