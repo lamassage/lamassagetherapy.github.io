@@ -329,3 +329,29 @@ form button {
 .slide.fade-out {
     animation: fadeOutSlideOut 1s forwards;
 }
+
+/* Other styles remain unchanged */
+
+.sports-massage-benefits {
+    position: relative;
+    padding: 20px;
+    background: #e3f6f5; /* Light background color for contrast */
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.sports-massage-benefits .benefit {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    width: 100%;
+}
+
+.sports-massage-benefits .benefit.active {
+    opacity: 1;
+    position: relative;
+}
+
+.sports-massage-benefits h4 {
+    margin-bottom: 15px;
+}

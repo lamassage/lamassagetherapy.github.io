@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Automatic transition
-    setInterval(nextSlide, 4000); // Change slide every 4 seconds
+    setInterval(nextSlide, 6000); // Change slide every 4 seconds
 
     // Form Validation
     const contactForm = document.querySelector('form[action="submit_form.php"]');
@@ -106,4 +106,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     setInterval(nextTestimonial, 4000); // Change testimonial every 4 seconds
+
+    // Sports Massage Benefits Slideshow
+    const benefits = document.querySelectorAll('.sports-massage-benefits .benefit');
+    let currentBenefit = 0;
+
+    function showBenefit(index) {
+        benefits.forEach((benefit, i) => {
+            if (i === index) {
+                benefit.classList.add('active');
+            } else {
+                benefit.classList.remove('active');
+            }
+        });
+    }
+
+    function nextBenefit() {
+        currentBenefit = (currentBenefit < benefits.length - 1) ? currentBenefit + 1 : 0;
+        showBenefit(currentBenefit);
+    }
+
+    // Automatic transition for sports massage benefits
+    setInterval(nextBenefit, 5000); // Change benefit every 5 seconds
 });
