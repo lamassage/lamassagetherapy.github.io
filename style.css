@@ -127,6 +127,113 @@ section h2 {
     text-align: center;
 }
 
+/* Services Section */
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Tooltip Styles */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 6px;
+
+    /* Positioning */
+    position: absolute;
+    z-index: 1;
+    bottom: 100%; /* Show above the text */
+    left: 50%;
+    margin-left: -100px; /* Center the tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Services Section */
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.service {
+    flex: 1 1 calc(50% - 20px); /* Adjust to fit two services in a row */
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-box {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #61c2a2;
+    border-radius: 10px;
+    background-color: #e3f6f5;
+}
+
+.pricing-box h4 {
+    margin-bottom: 15px;
+    color: #39b88d;
+    font-size: 1.25em;
+    border-bottom: 2px solid #39b88d;
+    padding-bottom: 5px;
+}
+
+.pricing-box table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.pricing-box table th,
+.pricing-box table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    font-size: 1em;
+}
+
+.pricing-box table th {
+    background-color: #61c2a2;
+    color: #fff;
+}
+
+.pricing-box table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .service {
+        flex: 1 1 100%;
+    }
+}
+
+
 #about h2, #about h4, #about p {
     text-align: center;
     margin-bottom: 20px; /* Ensure spacing between paragraphs */
