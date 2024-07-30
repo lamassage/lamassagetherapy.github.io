@@ -25,13 +25,19 @@ header {
     color: #FFFFFF; /* White text */
     padding: 5px 0; /* Reduced padding to make the header smaller */
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    text-align: center; /* Center text */
 }
 
 header h1 {
-    text-align: center;
     margin-bottom: 10px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .logo img {
@@ -232,7 +238,6 @@ section h2 {
         flex: 1 1 100%;
     }
 }
-
 
 #about h2, #about h4, #about p {
     text-align: center;
