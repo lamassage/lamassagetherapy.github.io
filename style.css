@@ -41,7 +41,7 @@ header h1 {
 }
 
 .logo img {
-    max-width: 250px; /* Keep the logo size the same */
+    max-width: 300px; /* Keep the logo size the same */
 }
 
 nav ul {
@@ -58,6 +58,9 @@ nav ul li {
 nav ul li a {
     color: #FFFFFF; /* White text */
     text-decoration: none;
+    font-weight: bold; /* Make the text bold */
+    font-size: 1.2em; /* Adjust font size to be larger (1.2em is an example, adjust as needed) */
+    transition: color 0.3s, border-bottom 0.3s; /* Smooth transition for color and underline effects */
 }
 
 nav ul li a,
