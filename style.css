@@ -355,19 +355,23 @@ form button {
 }
 
 /* Fade-in and slide-in from the right effect */
-@keyframes fadeInSlideIn {
-    0% { opacity: 0; transform: translateX(100%); }
-    100% { opacity: 1; transform: translateX(0); }
+/* Testimonials Section */
+#testimonials {
+    background: #f9f9f9;
+    padding: 40px 0;
+    text-align: center;
 }
 
-/* Fade-out and slide-out to the left effect */
-@keyframes fadeOutSlideOut {
-    0% { opacity: 1; transform: translateX(0); }
-    100% { opacity: 0; transform: translateX(-100%); }
+#testimonials h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
 }
 
 .testimonials {
     position: relative;
+    height: 200px; /* Adjust height as needed */
+    overflow: hidden;
 }
 
 .testimonial {
@@ -380,85 +384,165 @@ form button {
 }
 
 .testimonial.active {
+    opacity: 1;
+    z-index: 1;
     animation: fadeInSlideIn 1s forwards;
 }
 
 .testimonial.fade-out {
+    opacity: 0;
+    z-index: 0;
     animation: fadeOutSlideOut 1s forwards;
 }
 
-/* Spacing adjustments for contact section */
-#contact {
-    margin-top: 60px; /* Added margin for better separation */
+.testimonial p {
+    font-size: 1.2em;
+    color: #666;
 }
 
-/* Additional styling for container */
-.container {
-    padding: 0 20px;
+.testimonial h4 {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #333;
 }
 
-/* Why Choose Me Section */
-#why-choose-me {
-    background: #61c2a2; /* Green background */
-    color: white; /* White text */
-    padding: 40px 20px;
-    text-align: center;
-}
-
-#why-choose-me h2 {
-    margin-bottom: 20px;
-    font-size: 2em;
-}
-
-/* Fade-in and fade-out effect for slide text */
-.slide p {
-    opacity: 0;
-    transition: opacity 2s ease-in-out;
-}
-
-.slide p.fade-in-text {
-    opacity: 1;
-}
-
-.slide p.fade-out-text {
-    opacity: 0;
-}
-
-.slide {
-    display: none;
-}
-
-.slide.active {
-    display: block;
-    animation: fadeInSlideIn 1s forwards;
-}
-
-.slide.fade-out {
-    animation: fadeOutSlideOut 1s forwards;
-}
-
-/* Other styles remain unchanged */
-
-.sports-massage-benefits {
-    position: relative;
-    padding: 20px;
-    background: #e3f6f5; /* Light background color for contrast */
-    border-radius: 5px;
+/* Navigation Arrows */
+.testimonial-nav {
+    display: flex;
+    justify-content: center;
     margin-top: 20px;
 }
 
-.sports-massage-benefits .benefit {
-    position: absolute;
+.arrow {
+    background: #61c2a2; /* Green background */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.5em;
+    margin: 0 10px;
+    transition: background 0.3s ease;
+}
+
+.arrow:hover {
+    background: #3b6e5d;
+}
+
+/* Fade-in and slide-in from the right effect */
+@keyframes fadeInSlideIn {
+    0% { opacity: 0; transform: translateX(100%); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Fade-out and slide-out to the left effect */
+@keyframes fadeOutSlideOut {
+    0% { opacity: 1; transform: translateX(0); }
+    100% { opacity: 0; transform: translateX(-100%); }
+}
+
+
+/* Visibility Classes */
+.fade-in {
     opacity: 0;
     transition: opacity 1s ease-in-out;
-    width: 100%;
 }
 
-.sports-massage-benefits .benefit.active {
+.fade-in.visible {
     opacity: 1;
-    position: relative;
 }
 
-.sports-massage-benefits h4 {
-    margin-bottom: 15px;
+
+#why-choose-me {
+    border: 2px solid #39b88d; /* Green border */
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background color for contrast */
+}
+
+.slideshow {
+    position: relative;
+    height: 150px; /* Adjust based on your content */
+    overflow: hidden;
+    padding: 10px; /* Add padding inside the slideshow for spacing */
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+    transform: translateX(0);
+    z-index: 1;
+}
+
+.slide.fade-out {
+    opacity: 0;
+    transform: translateX(-100%);
+    z-index: 0;
+}
+
+@keyframes slideInLeft {
+    0% { opacity: 0; transform: translateX(100%); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideOutLeft {
+    0% { opacity: 1; transform: translateX(0); }
+    100% { opacity: 0; transform: translateX(-100%); }
+}
+
+
+/* Container styles for the Why Choose Me section */
+#why-choose-me {
+    background-color: #cbe6dd; /* Light green background color */
+    border: 1px solid #a8d5c2; /* Slightly darker green border */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for a subtle 3D effect */
+    margin: 20px 0; /* Space around the section */
+}
+
+/* Styles for the slideshow */
+.slideshow {
+    position: relative;
+    height: 150px; /* Adjust based on your content */
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+    transform: translateX(0);
+    z-index: 1;
+}
+
+.slide.fade-out {
+    opacity: 0;
+    transform: translateX(-100%);
+    z-index: 0;
+}
+
+@keyframes slideInLeft {
+    0% { opacity: 0; transform: translateX(100%); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideOutLeft {
+    0% { opacity: 1; transform: translateX(0); }
+    100% { opacity: 0; transform: translateX(-100%); }
 }

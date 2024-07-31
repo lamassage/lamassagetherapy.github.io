@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Intersection Observer for fade-in effect
     const options = {
         threshold: 0.1
     };
@@ -31,19 +32,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Why Choose Me Slideshow
-    const slides = document.querySelectorAll('#why-choose-me .slide');
+    const slides = document.querySelectorAll('.slide');
     let currentSlide = 0;
 
     function showSlide(index) {
         slides.forEach((slide, i) => {
             if (i === index) {
                 slide.classList.add('active');
-                slide.querySelector('p').classList.add('fade-in-text');
-                slide.querySelector('p').classList.remove('fade-out-text');
+                slide.classList.remove('fade-out');
             } else {
                 slide.classList.remove('active');
-                slide.querySelector('p').classList.remove('fade-in-text');
-                slide.querySelector('p').classList.add('fade-out-text');
+                slide.classList.add('fade-out');
             }
         });
     }
@@ -53,35 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
         showSlide(currentSlide);
     }
 
-    // Automatic transition
-    setInterval(nextSlide, 6000); // Change slide every 4 seconds
-
-    // Form Validation
-    const contactForm = document.querySelector('form[action="submit_form.php"]');
-    contactForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const phone = document.getElementById('phone').value.trim();
-        const message = document.getElementById('message').value.trim();
-        if (name && validateEmail(email) && validatePhone(phone) && message) {
-            alert('Form submitted successfully!');
-            // Here you can add the code to actually submit the form
-            this.submit();
-        } else {
-            alert('Please fill in all fields correctly.');
-        }
-    });
-
-    function validateEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(String(email).toLowerCase());
-    }
-
-    function validatePhone(phone) {
-        const re = /^\d{10}$/;
-        return re.test(String(phone));
-    }
+    // Automatically switch slides every 5 seconds
+    setInterval(nextSlide, 5000);
 
     // Testimonials Slideshow
     const testimonials = document.querySelectorAll('.testimonial');
@@ -99,33 +71,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Automatically transition testimonials
     function nextTestimonial() {
         currentTestimonial = (currentTestimonial < testimonials.length - 1) ? currentTestimonial + 1 : 0;
         showTestimonial(currentTestimonial);
     }
 
-    setInterval(nextTestimonial, 4000); // Change testimonial every 4 seconds
-
-    // Sports Massage Benefits Slideshow
-    const benefits = document.querySelectorAll('.sports-massage-benefits .benefit');
-    let currentBenefit = 0;
-
-    function showBenefit(index) {
-        benefits.forEach((benefit, i) => {
-            if (i === index) {
-                benefit.classList.add('active');
-            } else {
-                benefit.classList.remove('active');
-            }
-        });
+    function prevTestimonial() {
+        currentTestimonial = (currentTestimonial > 0) ? currentTestimonial - 1 : testimonials.length - 1;
+        showTestimonial(currentTestimonial);
     }
 
-    function nextBenefit() {
-        currentBenefit = (currentBenefit < benefits.length - 1) ? currentBenefit + 1 : 0;
-        showBenefit(currentBenefit);
-    }
-
-    // Automatic transition for sports massage benefits
-    setInterval(nextBenefit, 10000); // Change benefit every 5 seconds
+    document.getElementById('next').addEventListener('click', nextTestimonial);
+    document.getElementById('prev').addEventListener('click', prevTestimonial);
 });
