@@ -133,7 +133,7 @@ section h2 {
     text-align: center;
 }
 
-/* Services Section */
+/* Container */
 .container {
     width: 90%;
     margin: 0 auto;
@@ -172,12 +172,6 @@ section h2 {
 }
 
 /* Services Section */
-.container {
-    width: 90%;
-    margin: 0 auto;
-    max-width: 1200px;
-}
-
 .services {
     display: flex;
     flex-wrap: wrap;
@@ -194,12 +188,19 @@ section h2 {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+@media (max-width: 768px) {
+    .service {
+        flex: 1 1 100%;
+    }
+}
+
 .pricing-box {
     margin-top: 20px;
     padding: 15px;
     border: 1px solid #61c2a2;
     border-radius: 10px;
     background-color: #e3f6f5;
+    overflow-x: auto; /* Ensure table can scroll on small screens */
 }
 
 .pricing-box h4 {
@@ -232,12 +233,6 @@ section h2 {
     background-color: #f9f9f9;
 }
 
-/* Mobile Styles */
-@media (max-width: 768px) {
-    .service {
-        flex: 1 1 100%;
-    }
-}
 
 #about h2, #about h4, #about p {
     text-align: center;
