@@ -167,12 +167,25 @@ section h2 {
     margin-left: -100px; /* Center the tooltip */
     opacity: 0;
     transition: opacity 0.3s;
+    pointer-events: none; /* Prevent mouse events */
 }
 
 .tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
 }
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+    .tooltip .tooltiptext {
+        width: auto; /* Allow dynamic width */
+        max-width: 90vw; /* Limit max width to viewport width */
+        left: 50%;
+        transform: translateX(-50%); /* Center horizontally */
+        margin-left: 0; /* Reset margin */
+    }
+}
+
 
 /* Services Section */
 .services {
