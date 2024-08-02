@@ -152,19 +152,20 @@ section h2 {
 
 .tooltip .tooltiptext {
     visibility: hidden;
-    width: 200px;
+    width: 150px; /* Reduced width */
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 5px 10px;
-    border-radius: 6px;
+    padding: 3px 5px; /* Reduced padding */
+    border-radius: 4px; /* Reduced border-radius */
+    font-size: 12px; /* Reduced font size */
 
     /* Positioning */
     position: absolute;
     z-index: 1;
     bottom: 100%; /* Show above the text */
     left: 50%;
-    margin-left: -100px; /* Center the tooltip */
+    margin-left: -75px; /* Center the tooltip */
     opacity: 0;
     transition: opacity 0.3s;
     pointer-events: none; /* Prevent mouse events */
@@ -179,12 +180,14 @@ section h2 {
 @media (max-width: 767px) {
     .tooltip .tooltiptext {
         width: auto; /* Allow dynamic width */
-        max-width: 90vw; /* Limit max width to viewport width */
+        max-width: 70vw; /* Limit max width to viewport width */
         left: 50%;
         transform: translateX(-50%); /* Center horizontally */
         margin-left: 0; /* Reset margin */
     }
 }
+
+
 
 
 /* Services Section */
